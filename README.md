@@ -1,2 +1,3 @@
 # pastelnet.os
-os for stardance
+personal os project for stardance
+created by sodahaunted
