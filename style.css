@@ -1,0 +1,81 @@
+        h1 {
+            font-size: 28px;
+        }
+        body {
+            background-color: rgba(120, 100, 247, 0.74);
+            background-image: url(https://img.magnific.com/free-vector/vintage-style-digital-sci-fi-landscape-background-design_1017-53568.jpg?semt=ais_hybrid&w=740&q=80);
+            background-position: fill;
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center;
+        }
+        p {
+            color: black;
+        }
+        br {
+            user-select: none;
+        }
+        img {
+            user-select: none;
+        }
+        .topbar {
+            display: flex;
+            color: white;
+            backdrop-filter: blur(10px);
+            padding: 10px;
+            background-color: rgba(33, 48, 255, 0.2);
+            font-weight: bold;
+            font-size: 15px;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            user-select: none;
+        }
+        .handle {
+            display: flex;
+            background-color: #fce398;
+            padding: 8px;
+            margin: 0;
+            border-bottom: 4px solid #c08d56;
+            border-radius: 5px 5px 0 0;
+            justify-content: space-between;
+        }
+        .handle:hover {
+            cursor: move;
+            background-color: #fce398;
+            border-bottom: 4px solid #c08d56;
+            justify-content: space-between;
+        }
+        .cancelbutton {
+            color: rgb(157, 101, 24);
+            background-color: #eec09e;
+            border-radius: 2px;
+            border: 1px;
+            padding: 5px;
+            font-size: 13px;
+            margin: 0;
+            cursor: pointer;
+        }
+        .cancelbutton:hover {
+            background-color: #cfa282;
+        }
+        .content {
+          text-align: center;
+          background-color: #fffaed;
+          border: 4px solid #c08d56;
+          height: 1;
+          width: 600px;
+          position: absolute;
+          top: 10%;
+          border-radius: 10px;
+          margin: 10px;
+          margin-top: 0px;
+          user-select: none;
+        }
+        .poster {
+            border-radius: 10px;
+            width: 250px;
+        }
+        .text {
+            padding: 5px;
+            user-select: text;
+        }
