@@ -1,10 +1,187 @@
 <!DOCTYPE html>
+<head>
+    <script type="module" src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        h1 {
+            font-size: 28px;
+        }
+        body {
+            background-color: rgba(120, 100, 247, 0.74);
+            background-image: url(https://img.magnific.com/free-vector/vintage-style-digital-sci-fi-landscape-background-design_1017-53568.jpg?semt=ais_hybrid&w=740&q=80);
+            background-position: fill;
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        p {
+            color: black;
+        }
+        br {
+            user-select: none;
+        }
+        img {
+            user-select: none;
+        }
+        .topbar {
+            display: flex;
+            color: white;
+            backdrop-filter: blur(10px);
+            padding: 10px;
+            background-color: rgba(33, 48, 255, 0.2);
+            font-weight: bold;
+            font-size: 15px;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            user-select: none;
+        }
+        .handle {
+            display: flex;
+            background-color: #fce398;
+            padding: 8px;
+            color: #c08d56;
+            border-bottom: 4px solid #c08d56;
+            border-radius: 5px 5px 0 0;
+            justify-content: space-between;
+        }
+        .handle:hover {
+            cursor: move;
+            background-color: #fce398;
+            border-bottom: 4px solid #c08d56;
+            justify-content: space-between;
+        }
+        .cancelbutton {
+            color: rgb(157, 101, 24);
+            background-color: #eec09e;
+            border-radius: 2px;
+            border: 1px;
+            padding: 5px;
+            font-size: 13px;
+            margin: 0;
+            cursor: pointer;
+        }
+        .cancelbutton:hover {
+            background-color: #cfa282;
+        }
+        .content {
+                left: 50%;
+          text-align: center;
+          background-color: #fffaed;
+          border: 4px solid #c08d56;
+          width: 600px;
+          border-radius: 10px;
+          user-select: none;
+        }
+        .text {
+            padding: 5px;
+            user-select: text;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+        }
+        .appIcon {
+            width: 100px;
+        }
+        .appIcon:hover {
+            opacity: 65%;
+            backdrop-filter: blur(30px);
+            color: black;
+            cursor: pointer;
+        }
+    </style>
+</head>
 <html>
   <body>
-    <h1>Welcome to my Personal OS, PastelNet.</h1>
-   <p>hello world!</p>
-   <p>this is my personal OS that I created for Hack Club Stardance.
-    <br>I will update this theme to create a 90's net inspired OS with a bunch of cute visuals and applications.
-   </p>
+    <div id="top" class="topbar">
+        <p style="color: white; margin: 0;">PastelNetOS</p>
+        <p id="timeElement" style="color: white; margin: 0;">Time</p>
+        <p style="color: white; margin: 0;">Systems Active!</p>
+    </div>
+
+    <div style="justify-content: center;">
+        <div id="welcomeopen" class="appIcon">
+            <img style="width: 100px;" src="https://raw.githubusercontent.com/sodahaunted/pastelnet.os/refs/heads/main/image-removebg-preview%20(6).png">
+            <p style="color: white;">Welcome</p>
+        </div>
+        <div id="usermenuopen" class="appIcon">
+            <img style="width: 100px;" src="https://github.com/sodahaunted/pastelnet.os/blob/main/image-removebg-preview.png?raw=true">
+            <p style="color: white;">User Menu</p>
+        </div>
+    </div>
+
+    <div class="content" id="welcome" style="display: none;">
+        <div class="handle" id="welcomeheader">
+            <p style="padding: 4px; font-weight: bold; color: rgb(107, 81, 47);">WELCOME PANEL</p>
+            <button id="welcomeclose" class="cancelbutton">Cancel</button>
+        </div>
+        <div class="text">
+            <br>
+            <h1 style="color: black;">Welcome to my Personal OS, PastelNet.</h1>
+            <br>
+            <p style="font-family: Courier, monospace;">this is my personal OS that I created for <b>Hack Club Stardance.</b> I will update this theme to create a 90's net inspired OS with custom applications and features.
+            <br>
+            <br>Thank you for checking out my project while it is in it's first development stage!
+            <br><br>
+            <img class="poster" src="https://i.pinimg.com/1200x/aa/6f/46/aa6f46d908409a656f2aee90b611bc74.jpg">
+            <br>
+            <br>
+        </div>
+    </div>
+
+    <div id="userMenu" class="content" style="display: none;">
+        <div class="handle" id="welcomeheader">
+            <p style="padding: 4px; font-weight: bold;">WHO ARE YOU?</p>
+            <button id="usermenuclose" class="cancelbutton">Cancel</button>
+        </div>
+        <div>
+            <br>
+            <p class="text">
+                Cyberpunk 2077 is a game based on Night City where you play a mercenary named V.
+                <br><br>
+                but that's not your name, is it? what is YOUR name?
+            </p>
+            <input type="text">
+            <br><br>
+            <button>SUBMIT</button>
+            <br><br>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var welcomeScreen = document.querySelector("#welcome");
+            var welcomeScreenClose = document.querySelector("#welcomeclose");
+            var welcomeScreenOpen = document.querySelector("#welcomeopen");
+
+            function openWindow(el) { el.style.display = "block"; }
+            function closeWindow(el) { el.style.display = "none"; }
+
+            welcomeScreenClose.addEventListener("click", function() {
+                closeWindow(welcomeScreen);
+            });
+
+            welcomeScreenOpen.addEventListener("click", function() {
+                openWindow(welcomeScreen);
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var userMenu = document.querySelector("#userMenu")
+            var userMenuScreenClose = document.querySelector("#usermenuclose")
+            var userMenuScreenOpen = document.querySelector("#usermenuopen")
+            
+            function openWindow(el) { el.style.display = "block"; }
+            function closeWindow(el) { el.style.display = "none"; }
+
+            userMenuScreenClose.addEventListener("click", function() {
+                closeWindow(userMenu);
+            });
+
+            userMenuScreenOpen.addEventListener("click", function() {
+                openWindow(userMenu);
+            });
+        });
+    </script>
+
   </body>
 </html>
