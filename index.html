@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
 
     <style>
@@ -34,7 +34,7 @@
             color: rgb(201, 55, 55);
             backdrop-filter: blur(10px);
             padding: 10px;
-            background-color: rgba(155, 159, 222, 0.2);
+            background-color: rgba(155, 160, 222, 0.255);
             font-weight: bold;
             font-size: 15px;
             justify-content: space-between;
@@ -44,18 +44,18 @@
         }
         .handle {
             display: flex;
-            background-color: #fce398;
+            background-color: #e36cbfdb;
             padding: 7px;
-            color: #c08d56;
-            border-bottom: 4px solid #c08d56;
-            border-radius: 5px 5px 0 0;
+            color: #b543a9;
+            border-bottom: 4px solid #b73c92;
             justify-content: space-between;
+            backdrop-filter: blur(10px);
+
         }
         .handle:hover {
             cursor: move;
-            background-color: #fce398;
-            border-bottom: 4px solid #c08d56;
-            justify-content: space-between;
+            background-color: #cd5fac;
+            border-bottom: 4px solid #b73c92;
         }
         .cancelbutton {
             color: rgb(157, 101, 24);
@@ -71,13 +71,14 @@
             background-color: #cfa282;
         }
         .content {
-            left: 50%;
+        left: 50%;
           text-align: center;
-          background-color: #fffaed;
-          border: 4px solid #c08d56;
+          background-color: #fffaedc7;
+          border: 4px solid #b73c92;
+          backdrop-filter: blur(10px);
           width: 600px;
-          border-radius: 10px;
           user-select: none;
+          opacity: 90%;
         }
         .text {
             padding: 5px;
@@ -86,11 +87,13 @@
         }
         .appIcon {
             width: 300px;
+            opacity: 85%;
             color: white; 
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-size: 15px;
         }
         .appIcon:hover {
+            width: 295px;
             opacity: 65%;
             cursor: pointer;
         }
@@ -124,11 +127,11 @@
             <br>
             <h1 style="color: black;">Welcome to PastelNetOS.</h1>
             <br>
-            <p style="font-family: Courier, monospace;">this is my personal OS that I created for <b>Hack Club Stardance.</b> I will update this theme to create a 90's net inspired OS with custom applications and features.
+            <p>this is my personal OS that I created for <b>Hack Club Stardance.</b> I will update this theme to create a 90's net inspired OS with custom applications and features.
             <br><br>
             <p>Current planned updates: working apps, fake concept email, dynamic timer/layout</p>
             <br>
-            <br>Thank you for checking out my project while it is in it's first development stage!
+            <p>Thank you for checking out my project while it is in it's first development stage!</p>
             <br><br>
             <img class="poster" src="https://i.pinimg.com/1200x/aa/6f/46/aa6f46d908409a656f2aee90b611bc74.jpg">
             <br>
