@@ -8,13 +8,14 @@
             font-size: 28px;
         }
         body {
-            background-color: #1F084B;
-            background-image: url(https://img.magnific.com/free-vector/vintage-style-digital-sci-fi-landscape-background-design_1017-53568.jpg?semt=ais_hybrid&w=740&q=80);
+            background-color: #2A0621;
+            background-image: url(https://images.hdqwalls.com/wallpapers/city-lights-sunrise-vaporwave-s5.jpg);
             background-position: fill;
             background-repeat: no-repeat;
             background-size: cover;
             text-align: center;
             font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
         }
         p {
             color: black;
@@ -30,13 +31,14 @@
         }
         .topbar {
             display: flex;
-            color: white;
+            color: rgb(201, 55, 55);
             backdrop-filter: blur(10px);
             padding: 10px;
-            background-color: rgba(33, 48, 255, 0.2);
+            background-color: rgba(155, 159, 222, 0.2);
             font-weight: bold;
             font-size: 15px;
             justify-content: space-between;
+            margin: 0px;
             margin-bottom: 5px;
             user-select: none;
         }
@@ -83,14 +85,13 @@
             font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
         }
         .appIcon {
-            width: 100px;
+            width: 300px;
             color: white; 
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-size: 15px;
         }
         .appIcon:hover {
             opacity: 65%;
-            backdrop-filter: blur(35px);
             cursor: pointer;
         }
     </style>
@@ -98,23 +99,19 @@
 <html>
   <body>
     <div id="top" class="topbar">
-        <p style="color: white; margin: 0;">PastelNetOS</p>
-        <p id="timeElement" style="color: white; margin: 0;">Time</p>
-        <p style="color: white; margin: 0;">Systems Active!</p>
+        <p style="color: white; margin: 0;">PastelNetOS ⏾</p>
+        <p id="timeElement" style="color: white; margin: 0;">Time ⏾</p>
     </div>
 
     <div style="justify-content: center;">
         <div id="welcomeopen" class="appIcon">
-            <img style="width: 100px;" src="https://github.com/sodahaunted/pastelnet.os/blob/main/.vscode/images/fishicon.png?raw=true">
-            <p style="color: white;  font-family: Verdana, Geneva, Tahoma, sans-serif">Welcome</p>
+            <img style="width: 300px;" src="https://github.com/sodahaunted/pastelnet.os/blob/main/select1.png?raw=true">
         </div>
         <div id="usermenuopen" class="appIcon">
-            <img style="width: 100px;" src="https://github.com/sodahaunted/pastelnet.os/blob/main/.vscode/images/texticon.png?raw=true">
-            <p style="color: white;  font-family: Verdana, Geneva, Tahoma, sans-serif">User Menu</p>
+            <img style="width: 300px;" src="https://github.com/sodahaunted/pastelnet.os/blob/main/select3.png?raw=true">
         </div>
-        <div id="usermenuopen" class="appIcon">
-            <img style="width: 100px;" src="https://github.com/sodahaunted/pastelnet.os/blob/main/.vscode/images/exclaicon.png?raw=true">
-            <p style="color: white; font-family: Verdana, Geneva, Tahoma, sans-serif">Messages</p>
+        <div id="messagesopen" class="appIcon">
+            <img style="width: 300px;" src="https://github.com/sodahaunted/pastelnet.os/blob/main/select2.png?raw=true">
         </div>
     </div>
 
@@ -125,7 +122,7 @@
         </div>
         <div class="text">
             <br>
-            <h1 style="color: black;">Welcome to my PastelNetOS.</h1>
+            <h1 style="color: black;">Welcome to PastelNetOS.</h1>
             <br>
             <p style="font-family: Courier, monospace;">this is my personal OS that I created for <b>Hack Club Stardance.</b> I will update this theme to create a 90's net inspired OS with custom applications and features.
             <br><br>
@@ -140,7 +137,7 @@
     </div>
 
     <div id="userMenu" class="content" style="display: none;">
-        <div class="handle" id="welcomeheader">
+        <div class="handle" id="userMenuheader">
             <p style="padding: 4px; font-weight: bold; color: rgb(107, 81, 47);">WHO ARE YOU?</p>
             <button id="usermenuclose" class="cancelbutton">Cancel</button>
         </div>
@@ -156,6 +153,20 @@
             <br><br>
             <button>SUBMIT</button>
             <br><br>
+        </div>
+    </div>
+
+    <div id="messages" class="content" style="display: none;">
+        <div class="handle" id="messagesheader">
+            <p style="padding: 4px; font-weight: bold; color: rgb(107, 81, 47);">MESSAGES [1]</p>
+            <button id="messagesclose" class="cancelbutton">Cancel</button>
+        </div>
+        <div class="text">
+            <br>
+            <p>
+                EMAIL
+            </p>
+            <br>
         </div>
     </div>
 
@@ -191,6 +202,23 @@
 
             userMenuScreenOpen.addEventListener("click", function() {
                 openWindow(userMenu);
+            });
+        });
+
+            document.addEventListener("DOMContentLoaded", function() {
+            var messages = document.querySelector("#messages")
+            var messagesScreenClose = document.querySelector("#messagesclose")
+            var messagesScreenOpen = document.querySelector("#messagesopen")
+            
+            function openWindow(el) { el.style.display = "block"; }
+            function closeWindow(el) { el.style.display = "none"; }
+
+            messagesScreenClose.addEventListener("click", function() {
+                closeWindow(messages);
+            });
+
+            messagesScreenOpen.addEventListener("click", function() {
+                openWindow(messages);
             });
         });
     </script>
