@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <head>
+    <!-- PASTELNET.OS// VERSION 1.0.4 -->
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
 
@@ -29,6 +30,27 @@
         p {
             margin: 0;
         }
+        .link {
+            color:#b73c92;
+            margin: 0;
+        }
+        .link:hover {
+            filter: drop-shadow(0 0 2px #f6f0f2);
+            cursor:pointer;
+            color: #e176cd;
+        }
+        button {
+           border: 2px solid #8a2f50;
+           background-color: #f7acd7;
+           padding: 3px 10px 3px 10px;
+           border-radius: 5px;
+        }
+        button:hover {
+            filter: drop-shadow(0 0 8px #dd74ae);
+        }
+        button:active {
+            background-color: #e389bc;
+        }
         .topbar {
             display: flex;
             color: rgb(201, 55, 55);
@@ -57,6 +79,7 @@
             background-color: #e86fc4;
             border-bottom: 4px solid #b73c92;
         }
+        
         .cancelbutton {
             color: rgb(246, 230, 241);
             background-color: #d85ab5;
@@ -78,7 +101,7 @@
           backdrop-filter: blur(10px);
           width: 600px;
           user-select: none;
-          opacity: 90%;
+          opacity: 99%;
         }
         .text {
             padding: 5px;
@@ -94,8 +117,21 @@
         }
         .appIcon:hover {
             width: 295px;
-            opacity: 65%;
+            opacity: 100%;
+            filter: drop-shadow(0 0 10px #8a2f50);
             cursor: pointer;
+        }
+        .poster {
+            opacity: 65%;
+        }
+        .emailBox {
+            padding: 10px;
+            margin: 8px;
+            border-radius: 5px;
+            border: 2px solid #b73c92;
+            background-color: #fbe0ff;
+            text-align: left;
+            opacity: 60%;
         }
     </style>
 </head>
@@ -121,19 +157,20 @@
     <div class="content" id="welcome" style="display: none;">
         <div class="handle" id="welcomeheader">
             <p style="padding: 4px; font-weight: bold;;">WELCOME PANEL</p>
-            <button id="welcomeclose" class="cancelbutton">CANCEL</button>
+            <button id="welcomeclose" class="cancelbutton">CLOSE</button>
         </div>
         <div class="text">
             <br>
             <h1 style="color: black;">Welcome to PastelNetOS.</h1>
             <br>
-            <p>this is my personal OS that I created for <b>Hack Club Stardance.</b> I will update this theme to create a 90's net inspired OS with custom applications and features.
+                <img class="poster" src="https://i.pinimg.com/1200x/a6/11/e9/a611e92a622b6ceb9f2bb53debea68e1.jpg">
             <br><br>
-            <p>Current planned updates: working apps, fake concept email, dynamic timer/layout</p>
+                <p>Hello, <b>New User.</b> PastelNetOS is a new browser-based OS powered by modern technology, providing its users a futuristic cyberpunk OS experience.</p>
             <br>
-            <p>Thank you for checking out my project while it is in it's first development stage!</p>
-            <br><br>
-            <img class="poster" src="https://i.pinimg.com/1200x/aa/6f/46/aa6f46d908409a656f2aee90b611bc74.jpg">
+                <p>Please make sure to complete your login in the user menu.
+                    More updates are planned in the future, including a notes app, calculator app, settings, and an enhanced email system.</p>
+            <br>
+                <p>PastelNetOS is currently in Beta. Please steer clear from scammy-looking advertisements. Your safety is not guaranteed.</p>
             <br>
             <br>
         </div>
@@ -142,33 +179,45 @@
     <div id="userMenu" class="content" style="display: none;">
         <div class="handle" id="userMenuheader">
             <p style="padding: 4px; font-weight: bold;">WHO ARE YOU?</p>
-            <button id="usermenuclose" class="cancelbutton">CANCEL</button>
+            <button id="usermenuclose" class="cancelbutton">CLOSE</button>
         </div>
-        <div class="text">
-            <br>
+        <div id="userMenuText" class="text" style="padding: 30px 5px 30px 5px;">
             <p>
-                Cyberpunk 2077 is a game based on Night City where you play a mercenary named V.
+                Cyberpunk 2077 is a game based on Night City where you play as mercenary named V.
                 <br><br>
                 but that's not your name, is it? what is YOUR name?
                 <br><br>
             </p>
             <input type="text" placeholder="my name is...">
             <br><br>
-            <button>SUBMIT</button>
-            <br><br>
+            <button id="userMenuButton" class="trigger" style="border-radius: 2px;">SUBMIT</button>
+            <br>
         </div>
     </div>
 
     <div id="messages" class="content" style="display: none;">
         <div class="handle" id="messagesheader">
-            <p style="padding: 4px; font-weight: bold;">MESSAGES [1]</p>
-            <button id="messagesclose" class="cancelbutton">CANCEL</button>
+            <p class="target" style="padding: 4px; font-weight: bold;">MESSAGES [1]</p>
+            <button id="messagesclose" class="cancelbutton">CLOSE</button>
         </div>
         <div class="text">
             <br>
-            <p>
-                EMAIL
-            </p>
+                <p style="text-align: left; margin: 8px;">
+                        >>> 1 NEW MESSAGE
+                        <br>FROM: totallyrealemail@mon3y.com
+                        <br>SUBJECT: free EDD1ES$!!!
+                        <br><br>
+                </p>
+                <div class="emailBox">
+                    <p>
+                        heyy, how are y4 doing, kid?? heard you're a new edg3runner on the block. hey. listen.
+                        i got a FREE methdo for you to gain s0me TOTALY REAL CA$H! You in? y0u'd better be in. heh.
+                        <br><br>all you gott4 do is go to this total1y not fake website and enter in your cr3dit card!
+                        don't believe me? c'mon, you wanna make some cash for free, dont you...??
+                        <br><br>
+                    CLICK HERE!!! -> <a class="link" href="scam.html"><u>www.freemony.lol</u></a>
+                    </p>
+                </div>
             <br>
         </div>
     </div>
@@ -208,7 +257,7 @@
             });
         });
 
-            document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function() {
             var messages = document.querySelector("#messages")
             var messagesScreenClose = document.querySelector("#messagesclose")
             var messagesScreenOpen = document.querySelector("#messagesopen")
@@ -222,6 +271,30 @@
 
             messagesScreenOpen.addEventListener("click", function() {
                 openWindow(messages);
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const textElement = document.getElementById('userMenuText');
+
+            const buttonElement = document.getElementById('userMenuButton');
+
+            const userName = document.getElementById("userMenuButton").value;
+
+            buttonElement.addEventListener('click', () => {
+                textElement.textContent = 'Successfully logged in. Thank you for joining us.'
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const textElement = document.getElementById('userMenuText');
+
+            const buttonElement = document.getElementById('userMenuButton');
+
+            const userName = document.getElementById("userMenuButton").value;
+
+            buttonElement.addEventListener('click', () => {
+                textElement.textContent = 'Successfully logged in. Thank you for joining us.'
             });
         });
     </script>

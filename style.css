@@ -10,7 +10,9 @@
             text-align: center;
         }
         p {
-            color: black;
+            color: rgb(98, 26, 62);
+            padding: 2px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
         }
         br {
             user-select: none;

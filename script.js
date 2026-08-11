@@ -38,7 +38,6 @@ function dragElement(elmnt) {
   }
 
   function closeDragElement() {
-    // stop moving when mouse button is released:
     document.onmouseup = null;
     document.onmousemove = null;
   }
@@ -49,7 +48,6 @@ dragElement(document.querySelector("#userMenu"));
 dragElement(document.querySelector("#messages"));
 
 if (document.getElementById(elmnt.id + "header")) {
-	// if present, the header is where you move the DIV from:
 	document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
 } else {
 	elmnt.onmousedown = dragMouseDown;
