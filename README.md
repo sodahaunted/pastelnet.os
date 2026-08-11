@@ -1,17 +1,18 @@
-<h2>PastelNetOS</h2>
-<p>A browser-based custom OS in a cyberpunk/vaporwave theme.</p>
+<h1>PastelNetOS</h1>
+
+A browser-based OS built with HTML, CSS and JavaScript. Inspired by vaporwave and cyberpunk aesthetics.
+
+<a href="https://sodahaunted.github.io/pastelnet.os/">[View the site here!]</a>
+
+Features: 
+- Interactive (draggable/clickable) windows
+- Liquid glass inspired UI
+- Concept email app w/ fake scam link
+- Real-time updating clock
 <br>
-Currently features 3 different web applications; a welcome menu, a user menu, and messages.
 
-- Reactive UI
-- Cyberpunk 2077 inspired theme and layout
+This website was inspired by Cyberpunk 2077, a game by CD Projekt Red.
 
-Planned updates: multiple Apps, including:
+Wallpaper is from hdqwalls.com. All other photos are from Pinterest.
 
-    - Calculator
-    - Notes
-    - Fortune Teller
-    - MP3 Player
-    - Settings -> change background, accent colours, sound effects, and more
-
-This site is a project for Hack Club Stardance.
+This project was made for <a href="https://stardance.hackclub.com/">Hack Club Stardance</a> and is hosted on GitHub Pages.
