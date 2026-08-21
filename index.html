@@ -30,6 +30,7 @@
         p {
             margin: 0;
         }
+        
         .link {
             color:#b73c92;
             margin: 0;
@@ -76,10 +77,10 @@
         }
         .handle:hover {
             cursor: move;
-            background-color: #e86fc4;
+            background-color: #f378ce;
             border-bottom: 4px solid #b73c92;
         }
-        
+    
         .cancelbutton {
             color: rgb(246, 230, 241);
             background-color: #d85ab5;
@@ -94,15 +95,18 @@
             background-color: #c847a3;
         }
         .content {
-        left: 50%;
           text-align: center;
           background-color: #fffaedc7;
           border: 4px solid #b73c92;
           backdrop-filter: blur(10px);
+          filter: drop-shadow(0 0 10px #8a2f50);
           width: 600px;
           user-select: none;
           opacity: 99%;
+          position: absolute;
+          z-index: 1;
         }
+
         .text {
             padding: 5px;
             user-select: text;
@@ -188,7 +192,7 @@
                 but that's not your name, is it? what is YOUR name?
                 <br><br>
             </p>
-            <input type="text" placeholder="my name is...">
+            <input type="text" placeholder="my name is..." style="border-radius: 5px; padding: 2px;">
             <br><br>
             <button id="userMenuButton" class="trigger" style="border-radius: 2px;">SUBMIT</button>
             <br>

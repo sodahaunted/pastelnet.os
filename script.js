@@ -1,9 +1,10 @@
-    function updateTime() {
-        var currentTime = new Date().toLocaleString();
-        var timeText = document.querySelector("#timeElement");
-        timeText.innerHTML = currentTime;
-    }
-    setInterval(updateTime, 100);
+function updateTime() {
+  var currentTime = new Date().toLocaleString();
+  var timeText = document.querySelector("#timeElement");
+  timeText.innerHTML = currentTime;
+}
+
+setInterval(updateTime, 100);
 
 
 dragElement(document.getElementById("welcome"));
@@ -11,7 +12,6 @@ function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
   var startTop = 0, startLeft = 0;
   if (document.getElementById(elmnt.id + "header")) {
-    // if present, the header is where you move the DIV from:
     document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
   } else {
     elmnt.onmousedown = dragMouseDown;
@@ -52,3 +52,16 @@ if (document.getElementById(elmnt.id + "header")) {
 } else {
 	elmnt.onmousedown = dragMouseDown;
 }
+
+let highestZindex = 1;
+
+const windows = document.querySelectorAll('.window');
+
+windows.forEach(box => {
+  box.addEventListener('click', function() {
+
+    highestZIndex++;
+
+    this.style.zIndex = highestZIndex;
+  });
+});
