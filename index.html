@@ -54,13 +54,11 @@
         }
         .topbar {
             display: flex;
-            color: rgb(201, 55, 55);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(15px);
             padding: 10px;
-            background-color: rgba(155, 160, 222, 0.255);
+            background-color: rgba(245, 138, 186, 0.424);
             font-weight: bold;
             font-size: 15px;
-            justify-content: space-between;
             margin: 0px;
             margin-bottom: 5px;
             user-select: none;
@@ -80,18 +78,24 @@
         }
     
         .cancelbutton {
-            color: rgb(246, 230, 241);
+            color: #d85ab5;
             background-color: #d85ab5;
-            border-radius: 2px;
+            border-radius: 1px;
             border: 0;
-            padding: 5px;
+            padding: 5px 10px 5px 10px;
             font-size: 13px;
             margin: 0;
             cursor: pointer;
         }
         .cancelbutton:hover {
-            background-color: #c847a3;
+            color: #f1a8dd;
         }
+
+        .cancelbutton:active {
+            background-color: rgb(214, 94, 160);
+            color: #db90c7;
+        }
+
         .content {
           text-align: center;
           background-color: #fffaedc7;
@@ -111,16 +115,17 @@
             font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
         }
         .appIcon {
-            width: 300px;
-            opacity: 85%;
+            width: 230px;
+            opacity: 65%;
             color: white; 
             font-family: Verdana, Geneva, Tahoma, sans-serif;
+            filter: drop-shadow(0 0 10px #87205a);
             font-size: 15px;
         }
         .appIcon:hover {
-            width: 295px;
-            opacity: 100%;
-            filter: drop-shadow(0 0 10px #8a2f50);
+            width: 232px;
+            opacity: 92%;
+            filter: drop-shadow(0 0 12px #a55795);
             cursor: pointer;
         }
         .poster {
@@ -137,33 +142,35 @@
             opacity: 60%;
         }
         .selected {
-            background-color:rgb(246, 230, 241);
+            background-color:rgb(242, 217, 234);
         }
     </style>
 </head>
 <html>
   <body>
     <div id="top" class="topbar">
-        <p style="color: white; margin: 0;">PastelNetOS ⏾</p>
-        <p id="timeElement" style="color: white; margin: 0;">Time ⏾</p>
+        <p style="color: white; margin: 0;">:// PastelNet OS ⏾</p>
+        <img src=".vscode/images/topbarIcon1.png">
+        <img src=".vscode/images/topbarIcon2.png">
+        <p id="timeElement" style="color: white; margin: 0; float: right;">Clock</p>
     </div>
-
-    <div style="justify-content: center;">
+<br>
+    <div style="justify-content: center; padding-left: 20px;">
         <div id="welcomeopen" class="appIcon">
-            <img style="width: 300px;" src=".vscode/images/modAppTerminal1.png">
+            <img style="width: 300px;" src="https://github.com/sodahaunted/pastelnet.os/blob/main/.vscode/images/modAppTerminal1.png?raw=true">
         </div>
         <div id="usermenuopen" class="appIcon">
-            <img style="width: 300px;" src=".vscode/images/modAppTerminal2.png">
+            <img style="width: 300px;" src="https://github.com/sodahaunted/pastelnet.os/blob/main/.vscode/images/modAppTerminal2.png?raw=true">
         </div>
         <div id="messagesopen" class="appIcon">
-            <img style="width: 300px;" src=".vscode/images/modAppTerminal3.png">
+            <img style="width: 300px;" src="https://github.com/sodahaunted/pastelnet.os/blob/main/.vscode/images/modAppTerminal3.png?raw=true">
         </div>
     </div>
 
     <div class="content selected" id="welcome" style="display: none;">
         <div class="handle" id="welcomeheader">
             <p style="padding: 4px; font-weight: bold;;">WELCOME PANEL</p>
-            <button id="welcomeclose" class="cancelbutton">CLOSE</button>
+            <button id="welcomeclose" class="cancelbutton"> ✖ </button>
         </div>
         <div class="text">
             <br>
@@ -171,12 +178,12 @@
             <br>
                 <img class="poster" src="https://i.pinimg.com/1200x/a6/11/e9/a611e92a622b6ceb9f2bb53debea68e1.jpg">
             <br><br>
-                <p>Hello, <b>New User.</b> PastelNetOS is a new browser-based OS powered by modern technology, providing its users a futuristic cyberpunk OS experience.</p>
+                <p>Hello, <b>New User.</b> PastelNetOS is a new browser-based OS that prioritizes providing its users a futuristic cyberpunk OS experience.</p>
             <br>
                 <p>Please make sure to complete your login in the user menu.
                     More updates are planned in the future, including a notes app, calculator app, settings, and an enhanced email system.</p>
             <br>
-                <p>PastelNetOS is currently in Beta. Please steer clear from scammy-looking advertisements. Your safety is not guaranteed.</p>
+                <p>PastelNetOS is currently in <b>Alpha 1.0.5.</b></p>
             <br>
             <br>
         </div>
@@ -185,7 +192,7 @@
     <div id="userMenu" class="content selected" style="display: none;">
         <div class="handle" id="userMenuheader">
             <p style="padding: 4px; font-weight: bold;">WHO ARE YOU?</p>
-            <button id="usermenuclose" class="cancelbutton">CLOSE</button>
+            <button id="usermenuclose" class="cancelbutton"> ✖ </button>
         </div>
         <div id="userMenuText" class="text" style="padding: 30px 5px 30px 5px;">
             <p>
@@ -204,7 +211,7 @@
     <div id="messages" class="content selected" style="display: none;">
         <div class="handle" id="messagesheader">
             <p class="target" style="padding: 4px; font-weight: bold;">MESSAGES [1]</p>
-            <button id="messagesclose" class="cancelbutton">CLOSE</button>
+            <button id="messagesclose" class="cancelbutton"> ✖ </button>
         </div>
         <div class="text">
             <br>
