@@ -73,12 +73,10 @@
             border-bottom: 4px solid #b73c92;
             justify-content: space-between;
             backdrop-filter: blur(10px);
-
         }
+
         .handle:hover {
             cursor: move;
-            background-color: #f378ce;
-            border-bottom: 4px solid #b73c92;
         }
     
         .cancelbutton {
@@ -104,7 +102,7 @@
           user-select: none;
           opacity: 99%;
           position: absolute;
-          z-index: 1;
+          z-index: 2;
         }
 
         .text {
@@ -127,6 +125,7 @@
         }
         .poster {
             opacity: 65%;
+            max-width: 300px;
         }
         .emailBox {
             padding: 10px;
@@ -136,6 +135,9 @@
             background-color: #fbe0ff;
             text-align: left;
             opacity: 60%;
+        }
+        .selected {
+            background-color:rgb(246, 230, 241);
         }
     </style>
 </head>
@@ -148,17 +150,17 @@
 
     <div style="justify-content: center;">
         <div id="welcomeopen" class="appIcon">
-            <img style="width: 300px;" src="https://github.com/sodahaunted/pastelnet.os/blob/main/.vscode/images/select1.png?raw=true">
+            <img style="width: 300px;" src=".vscode/images/modAppTerminal1.png">
         </div>
         <div id="usermenuopen" class="appIcon">
-            <img style="width: 300px;" src="https://github.com/sodahaunted/pastelnet.os/blob/main/.vscode/images/select3.png?raw=true">
+            <img style="width: 300px;" src=".vscode/images/modAppTerminal2.png">
         </div>
         <div id="messagesopen" class="appIcon">
-            <img style="width: 300px;" src="https://github.com/sodahaunted/pastelnet.os/blob/main/.vscode/images/select2.png?raw=true">
+            <img style="width: 300px;" src=".vscode/images/modAppTerminal3.png">
         </div>
     </div>
 
-    <div class="content" id="welcome" style="display: none;">
+    <div class="content selected" id="welcome" style="display: none;">
         <div class="handle" id="welcomeheader">
             <p style="padding: 4px; font-weight: bold;;">WELCOME PANEL</p>
             <button id="welcomeclose" class="cancelbutton">CLOSE</button>
@@ -180,7 +182,7 @@
         </div>
     </div>
 
-    <div id="userMenu" class="content" style="display: none;">
+    <div id="userMenu" class="content selected" style="display: none;">
         <div class="handle" id="userMenuheader">
             <p style="padding: 4px; font-weight: bold;">WHO ARE YOU?</p>
             <button id="usermenuclose" class="cancelbutton">CLOSE</button>
@@ -199,7 +201,7 @@
         </div>
     </div>
 
-    <div id="messages" class="content" style="display: none;">
+    <div id="messages" class="content selected" style="display: none;">
         <div class="handle" id="messagesheader">
             <p class="target" style="padding: 4px; font-weight: bold;">MESSAGES [1]</p>
             <button id="messagesclose" class="cancelbutton">CLOSE</button>
@@ -301,6 +303,56 @@
                 textElement.textContent = 'Successfully logged in. Thank you for joining us.'
             });
         });
+
+        document.addEventListener("DOMContentLoaded", function() {
+
+            buttonElement.addEventListener('click', () => {
+                textElement.textContent = 'Successfully logged in. Thank you for joining us.'
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+
+            const header1 = document.getElementById()
+            const window1 = document.getElementByClassName()
+
+            function selected(el) { el.style.background.color = "white"; el.style.zIndex = 10}
+            function unselected(el) { el.style.background.color = "black"; }
+
+            header1.addEventListener("click", function() {
+                selected(welcomeScreen);
+            });
+
+            header1.addEventListener("click", function() {
+                unselected(welcomeScreen);
+            });
+        });
+
+        document.addEventListener("click", function() {
+            const selectWindow = document.getElementsByClassName('content');
+            const selectTrue = window.getComputedStyle('content').zIndex;
+            selectWindow.style.zIndex = currentZIndex + 10;
+        });
+
+        // 1. Select the element using its ID
+        const headerSelect = document.getElementByClassName('#header');
+
+        // 2. Add a click event listener
+        headerSelect.addEventListener('click', function() {
+            // 3. Change the background color or text color
+            headerSelect.style.backgroundColor = 'lightblue'; 
+            headerSelect.style.color = 'white'; 
+        });
+
+        function handleWindowTap(element) {
+            const windowElement = document.getElementsByClassName('content')
+        if (windowElement.classList.contains("selected")) {
+            windowElement.style.zIndex = currentZIndex + 10;
+        } else {
+            functionB(element)
+        }
+        }
+
     </script>
 
   </body>

@@ -52,16 +52,3 @@ if (document.getElementById(elmnt.id + "header")) {
 } else {
 	elmnt.onmousedown = dragMouseDown;
 }
-
-let highestZindex = 1;
-
-const windows = document.querySelectorAll('.window');
-
-windows.forEach(box => {
-  box.addEventListener('click', function() {
-
-    highestZIndex++;
-
-    this.style.zIndex = highestZIndex;
-  });
-});
