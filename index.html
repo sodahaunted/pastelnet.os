@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <!-- PASTELNET.OS// VERSION 1.0.4 -->
+    <!-- PASTELNET.OS// VERSION 1.0.5 -->
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
 
@@ -26,6 +26,9 @@
         }
         img {
             user-select: none;
+        }
+        .icon {
+            width: 20px;
         }
         p {
             margin: 0;
@@ -56,12 +59,13 @@
             display: flex;
             backdrop-filter: blur(15px);
             padding: 10px;
-            background-color: rgba(245, 138, 186, 0.424);
+            background-color: rgba(248, 212, 191, 0.229);
             font-weight: bold;
             font-size: 15px;
             margin: 0px;
             margin-bottom: 5px;
             user-select: none;
+            justify-content: space-between
         }
         .handle {
             display: flex;
@@ -88,7 +92,7 @@
             cursor: pointer;
         }
         .cancelbutton:hover {
-            color: #f1a8dd;
+            color: #f0b5e0f8;
         }
 
         .cancelbutton:active {
@@ -116,7 +120,7 @@
         }
         .appIcon {
             width: 230px;
-            opacity: 65%;
+            opacity: 85%;
             color: white; 
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             filter: drop-shadow(0 0 10px #87205a);
@@ -124,7 +128,7 @@
         }
         .appIcon:hover {
             width: 232px;
-            opacity: 92%;
+            opacity: 95%;
             filter: drop-shadow(0 0 12px #a55795);
             cursor: pointer;
         }
@@ -150,9 +154,7 @@
   <body>
     <div id="top" class="topbar">
         <p style="color: white; margin: 0;">:// PastelNet OS ⏾</p>
-        <img src=".vscode/images/topbarIcon1.png">
-        <img src=".vscode/images/topbarIcon2.png">
-        <p id="timeElement" style="color: white; margin: 0; float: right;">Clock</p>
+        <p id="timeElement" style="color: white;">Clock</p>
     </div>
 <br>
     <div style="justify-content: center; padding-left: 20px;">
@@ -170,7 +172,7 @@
     <div class="content selected" id="welcome" style="display: none;">
         <div class="handle" id="welcomeheader">
             <p style="padding: 4px; font-weight: bold;;">WELCOME PANEL</p>
-            <button id="welcomeclose" class="cancelbutton"> ✖ </button>
+            <button id="welcomeclose" class="cancelbutton"> ✕ </button>
         </div>
         <div class="text">
             <br>
@@ -192,7 +194,7 @@
     <div id="userMenu" class="content selected" style="display: none;">
         <div class="handle" id="userMenuheader">
             <p style="padding: 4px; font-weight: bold;">WHO ARE YOU?</p>
-            <button id="usermenuclose" class="cancelbutton"> ✖ </button>
+            <button id="usermenuclose" class="cancelbutton"> ✕ </button>
         </div>
         <div id="userMenuText" class="text" style="padding: 30px 5px 30px 5px;">
             <p>
@@ -211,7 +213,7 @@
     <div id="messages" class="content selected" style="display: none;">
         <div class="handle" id="messagesheader">
             <p class="target" style="padding: 4px; font-weight: bold;">MESSAGES [1]</p>
-            <button id="messagesclose" class="cancelbutton"> ✖ </button>
+            <button id="messagesclose" class="cancelbutton"> ✕ </button>
         </div>
         <div class="text">
             <br>
