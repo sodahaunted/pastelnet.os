@@ -7,6 +7,7 @@
     <style>
         h1 {
             font-size: 28px;
+            color:#a43c85;
         }
         body {
             background-color: #2A0621;
@@ -19,7 +20,7 @@
             margin: 0;
         }
         p {
-            color: rgb(98, 26, 62);
+            color: rgba(150, 50, 100, 0.827);
         }
         br {
             user-select: none;
@@ -46,7 +47,7 @@
         button {
            border: 2px solid #8a2f50;
            background-color: #f7acd7;
-           padding: 3px 10px 3px 10px;
+           padding: 3px 6px 3px 6px;
            border-radius: 5px;
         }
         button:hover {
@@ -86,7 +87,7 @@
             background-color: #d85ab5;
             border-radius: 1px;
             border: 0;
-            padding: 5px 10px 5px 10px;
+            padding: 5px 9px 5px 9px;
             font-size: 13px;
             margin: 0;
             cursor: pointer;
@@ -119,7 +120,7 @@
             font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
         }
         .appIcon {
-            width: 230px;
+            width: 200px;
             opacity: 85%;
             color: white; 
             font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -127,7 +128,7 @@
             font-size: 15px;
         }
         .appIcon:hover {
-            width: 232px;
+            width: 202px;
             opacity: 95%;
             filter: drop-shadow(0 0 12px #a55795);
             cursor: pointer;
@@ -139,9 +140,9 @@
         .emailBox {
             padding: 10px;
             margin: 8px;
-            border-radius: 5px;
+            border-radius: 3px;
             border: 2px solid #b73c92;
-            background-color: #fbe0ff;
+            background-color: #fff6ff;
             text-align: left;
             opacity: 60%;
         }
@@ -171,12 +172,12 @@
 
     <div class="content selected" id="welcome" style="display: none;">
         <div class="handle" id="welcomeheader">
-            <p style="padding: 4px; font-weight: bold;;">WELCOME PANEL</p>
+            <p style="padding: 4px; font-weight: bold;;">WELCOME_MENU</p>
             <button id="welcomeclose" class="cancelbutton"> ✕ </button>
         </div>
         <div class="text">
             <br>
-            <h1 style="color: black;">Welcome to PastelNetOS.</h1>
+            <h1>Welcome to PastelNetOS.</h1>
             <br>
                 <img class="poster" src="https://i.pinimg.com/1200x/a6/11/e9/a611e92a622b6ceb9f2bb53debea68e1.jpg">
             <br><br>
@@ -193,7 +194,7 @@
 
     <div id="userMenu" class="content selected" style="display: none;">
         <div class="handle" id="userMenuheader">
-            <p style="padding: 4px; font-weight: bold;">WHO ARE YOU?</p>
+            <p style="padding: 4px; font-weight: bold;">USER MENU</p>
             <button id="usermenuclose" class="cancelbutton"> ✕ </button>
         </div>
         <div id="userMenuText" class="text" style="padding: 30px 5px 30px 5px;">
@@ -276,91 +277,53 @@
             var messages = document.querySelector("#messages")
             var messagesScreenClose = document.querySelector("#messagesclose")
             var messagesScreenOpen = document.querySelector("#messagesopen")
-            
+
             function openWindow(el) { el.style.display = "block"; }
             function closeWindow(el) { el.style.display = "none"; }
 
-            messagesScreenClose.addEventListener("click", function() {
-                closeWindow(messages);
-            });
-
-            messagesScreenOpen.addEventListener("click", function() {
-                openWindow(messages);
-            });
+                messagesScreenClose.addEventListener("click", function() {
+                    closeWindow(messages);
+                });
+                messagesScreenOpen.addEventListener("click", function() {
+                    openWindow(messages);
+                });
         });
 
         document.addEventListener("DOMContentLoaded", function() {
+
             const textElement = document.getElementById('userMenuText');
-
             const buttonElement = document.getElementById('userMenuButton');
-
             const userName = document.getElementById("userMenuButton").value;
-
             buttonElement.addEventListener('click', () => {
                 textElement.textContent = 'Successfully logged in. Thank you for joining us.'
             });
         });
 
         document.addEventListener("DOMContentLoaded", function() {
-            const textElement = document.getElementById('userMenuText');
+            const welcomeSelect = document.getElementById('welcome');
+            const welcomeStyle = window.getComputedStyle(welcomeSelect);
+            const welcomeZIndex = welcomeStyle.zIndex;
 
-            const buttonElement = document.getElementById('userMenuButton');
-
-            const userName = document.getElementById("userMenuButton").value;
-
-            buttonElement.addEventListener('click', () => {
-                textElement.textContent = 'Successfully logged in. Thank you for joining us.'
-            });
-        });
-
-        document.addEventListener("DOMContentLoaded", function() {
-
-            buttonElement.addEventListener('click', () => {
-                textElement.textContent = 'Successfully logged in. Thank you for joining us.'
-            });
-        });
-
-        document.addEventListener("DOMContentLoaded", function() {
-
-            const header1 = document.getElementById()
-            const window1 = document.getElementByClassName()
-
-            function selected(el) { el.style.background.color = "white"; el.style.zIndex = 10}
-            function unselected(el) { el.style.background.color = "black"; }
-
-            header1.addEventListener("click", function() {
-                selected(welcomeScreen);
+            welcomeSelect.addEventListener('click', function() { 
+                welcomeSelect.style.zIndex = welcomeZIndex + 1;
             });
 
-            header1.addEventListener("click", function() {
-                unselected(welcomeScreen);
+            const userMenuSelect = document.getElementById('userMenu');
+            const userMenuStyle = window.getComputedStyle(userMenuSelect);
+            const userMenuZIndex = userMenuStyle.zIndex;
+
+            userMenuSelect.addEventListener('click', function() { 
+                userMenuSelect.style.zIndex = userMenuZIndex + 1;
+            });
+
+            const messagesSelect = document.getElementById('messages');
+            const messagesStyle = window.getComputedStyle(messagesSelect);
+            const messagesZIndex = messagesStyle.zIndex;
+
+            messagesSelect.addEventListener('click', function() { 
+                messagesSelect.style.zIndex = messagesZIndex + 1;
             });
         });
-
-        document.addEventListener("click", function() {
-            const selectWindow = document.getElementsByClassName('content');
-            const selectTrue = window.getComputedStyle('content').zIndex;
-            selectWindow.style.zIndex = currentZIndex + 10;
-        });
-
-        // 1. Select the element using its ID
-        const headerSelect = document.getElementByClassName('#header');
-
-        // 2. Add a click event listener
-        headerSelect.addEventListener('click', function() {
-            // 3. Change the background color or text color
-            headerSelect.style.backgroundColor = 'lightblue'; 
-            headerSelect.style.color = 'white'; 
-        });
-
-        function handleWindowTap(element) {
-            const windowElement = document.getElementsByClassName('content')
-        if (windowElement.classList.contains("selected")) {
-            windowElement.style.zIndex = currentZIndex + 10;
-        } else {
-            functionB(element)
-        }
-        }
 
     </script>
 
