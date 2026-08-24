@@ -44,11 +44,4 @@ function dragElement(elmnt) {
 }
 
 dragElement(document.querySelector("#userMenu"));
-
 dragElement(document.querySelector("#messages"));
-
-if (document.getElementById(elmnt.id + "header")) {
-	document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
-} else {
-	elmnt.onmousedown = dragMouseDown;
-}
