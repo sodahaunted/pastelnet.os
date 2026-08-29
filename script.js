@@ -1,15 +1,13 @@
-function showTime() {
-  const now = new Date();
-  const timeString = now.toLocaleTimeString(navigator.language, {
-    hour: '2-digit',
-    minute: '2-digit'
-    });
-  document.getElementById('clock').textContent = timeString;
-  showTime();
-  }
+function updateTime() {
+  const currentTime = new Date().toLocaleTimeString(undefined, {
+  hour: '2-digit',
+  minute: '2-digit'
+});
+  const timeText = document.querySelector("#timeElement");
+  timeText.innerHTML = currentTime;
+}
 
-  setInterval(showTime, 1000);
-  showTime();
+setInterval(updateTime, 1000);
 
 dragElement(document.getElementById("welcome"));
 function dragElement(elmnt) {
