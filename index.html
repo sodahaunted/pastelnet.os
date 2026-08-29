@@ -33,6 +33,7 @@
         }
         p {
             margin: 0;
+            font-size: 14px;
         }
         
         .link {
@@ -68,10 +69,11 @@
             user-select: none;
             justify-content: space-between
         }
+
         .handle {
             display: flex;
-            background-color: #e36cbfdb;
-            padding: 7px;
+            background-color: #ea6fa6d0;
+            padding: 5px;
             color: #c755bc;
             border-bottom: 4px solid #b73c92;
             justify-content: space-between;
@@ -83,8 +85,8 @@
         }
     
         .cancelbutton {
-            color: #f0b5e0f8;
-            background-color: #d85ab5;
+            color: #f0b5e0b3;
+            background-color: #dd5a95d0;
             border-radius: 1px;
             border: 0;
             padding: 5px 9px 5px 9px;
@@ -103,15 +105,16 @@
 
         .content {
           text-align: center;
-          background-color: #fffaedc7;
+          background-color: #ffedf8c7;
           border: 4px solid #b73c92;
           backdrop-filter: blur(10px);
           filter: drop-shadow(0 0 10px #8a2f50);
-          width: 600px;
+          width: 500px;
           user-select: none;
           opacity: 99%;
           position: absolute;
           z-index: 1;
+          display: flex;
         }
 
         .text {
@@ -125,17 +128,16 @@
             color: white; 
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             filter: drop-shadow(0 0 10px #87205a);
-            font-size: 15px;
         }
         .appIcon:hover {
-            width: 202px;
+            width: 205px;
             opacity: 95%;
             filter: drop-shadow(0 0 12px #a55795);
             cursor: pointer;
         }
         .poster {
             opacity: 65%;
-            max-width: 300px;
+            max-width: 230px;
         }
         .emailBox {
             padding: 10px;
@@ -154,19 +156,18 @@
 <html>
   <body>
     <div id="top" class="topbar">
-        <p style="color: white; margin: 0;">:// PastelNet OS ⏾</p>
-        <p id="timeElement" style="color: white;">Clock</p>
+        <p style="color: white; margin: 0;">PastelNet OS ⏾</p>
+        <p id="clock" style="color: white;">Clock</p>
     </div>
-<br>
-    <div style="justify-content: center; padding-left: 20px;">
+    <div style="display: flex; padding-left: 10px; flex-direction: column; padding-top: 20%;">
         <div id="welcomeopen" class="appIcon">
-            <img style="width: 300px;" src="https://github.com/sodahaunted/pastelnet.os/blob/main/.vscode/images/modAppTerminal1.png?raw=true">
+            <img src="https://github.com/sodahaunted/pastelnet.os/blob/main/.vscode/images/modAppTerminal1.png?raw=true">
         </div>
         <div id="usermenuopen" class="appIcon">
-            <img style="width: 300px;" src="https://github.com/sodahaunted/pastelnet.os/blob/main/.vscode/images/modAppTerminal2.png?raw=true">
+            <img src="https://github.com/sodahaunted/pastelnet.os/blob/main/.vscode/images/modAppTerminal2.png?raw=true">
         </div>
         <div id="messagesopen" class="appIcon">
-            <img style="width: 300px;" src="https://github.com/sodahaunted/pastelnet.os/blob/main/.vscode/images/modAppTerminal3.png?raw=true">
+            <img src="https://github.com/sodahaunted/pastelnet.os/blob/main/.vscode/images/modAppTerminal3.png?raw=true">
         </div>
     </div>
 
@@ -194,7 +195,7 @@
 
     <div id="userMenu" class="content selected" style="display: none;">
         <div class="handle" id="userMenuheader">
-            <p style="padding: 4px; font-weight: bold;">USER MENU</p>
+            <p style="padding: 4px; font-weight: bold;">USER_MENU</p>
             <button id="usermenuclose" class="cancelbutton"> ✕ </button>
         </div>
         <div id="userMenuText" class="text" style="padding: 30px 5px 30px 5px;">
@@ -204,7 +205,7 @@
                 but that's not your name, is it? what is YOUR name?
                 <br><br>
             </p>
-            <input type="text" placeholder="my name is..." style="border-radius: 5px; padding: 2px;">
+            <input id="userMenuInput" type="text" placeholder="my name is..." style="border-radius: 5px; padding: 2px;">
             <br><br>
             <button id="userMenuButton" class="trigger" style="border-radius: 2px;">SUBMIT</button>
             <br>
@@ -219,18 +220,18 @@
         <div class="text">
             <br>
                 <p style="text-align: left; margin: 8px;">
-                        >>> 1 NEW MESSAGE
-                        <br>FROM: totallyrealemail@mon3y.com
-                        <br>SUBJECT: free EDD1ES$!!!
-                        <br><br>
+                    >>> 1 NEW MESSAGE
+                    <br>FROM: totallyrealemail@mon3y.com
+                    <br>SUBJECT: free EDD1ES$!!!
+                    <br><br>
                 </p>
                 <div class="emailBox">
                     <p>
-                        heyy, how are y4 doing, kid?? heard you're a new edg3runner on the block. hey. listen.
-                        i got a FREE methdo for you to gain s0me TOTALY REAL CA$H! You in? y0u'd better be in. heh.
-                        <br><br>all you gott4 do is go to this total1y not fake website and enter in your cr3dit card!
-                        don't believe me? c'mon, you wanna make some cash for free, dont you...??
-                        <br><br>
+                    heyy, how are y4 doing, kid?? heard you're a new edg3runner on the block. hey. listen.
+                    i got a FREE methdo for you to gain s0me TOTALY REAL CA$H! You in? y0u'd better be in. heh.
+                    <br><br>all you gott4 do is go to this total1y not fake website and enter in your cr3dit card!
+                    don't believe me? c'mon, you wanna make some cash for free, dont you...??
+                    <br><br>
                     CLICK HERE!!! -> <a class="link" href="scam.html"><u>www.freemony.lol</u></a>
                     </p>
                 </div>
@@ -293,15 +294,16 @@
 
             const textElement = document.getElementById('userMenuText');
             const buttonElement = document.getElementById('userMenuButton');
-            const userName = document.getElementById("userMenuButton").value;
+            const userName = document.getElementById("userMenuInput")
+            userMenuInput.type = "text";
             buttonElement.addEventListener('click', () => {
-                textElement.textContent = 'Successfully logged in. Thank you for joining us.'
+                const userValue = userMenuInput.value;
+                textElement.textContent = 'Welcome, ' + userValue + '. Thank you for joining us.';
             });
         });
 
         document.addEventListener("DOMContentLoaded", function() {
             let topZ = 1;
-
             document.querySelectorAll(".content").forEach(function(win) {
                 win.addEventListener("mousedown", function() {
                     topZ++;

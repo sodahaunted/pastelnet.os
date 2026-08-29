@@ -1,11 +1,15 @@
-function updateTime() {
-  var currentTime = new Date().toLocaleString();
-  var timeText = document.querySelector("#timeElement");
-  timeText.innerHTML = currentTime;
-}
+function showTime() {
+  const now = new Date();
+  const timeString = now.toLocaleTimeString(navigator.language, {
+    hour: '2-digit',
+    minute: '2-digit'
+    });
+  document.getElementById('clock').textContent = timeString;
+  showTime();
+  }
 
-setInterval(updateTime, 100);
-
+  setInterval(showTime, 1000);
+  showTime();
 
 dragElement(document.getElementById("welcome"));
 function dragElement(elmnt) {
