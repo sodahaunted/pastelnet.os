@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <head>
-    <!-- PASTELNET.OS// VERSION 1.0.5 -->
+    <!-- PASTELNET.OS// VERSION 1.0.6 -->
+    <title>PastelNet://OS</title>
+    <link rel="icon" type="image/x-icon" href="https://github.com/sodahaunted/pastelnet.os/blob/main/.vscode/images/modAppTerminal2.png?raw=true">
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
 
@@ -35,7 +37,6 @@
             margin: 0;
             font-size: 14px;
         }
-        
         .link {
             color:#b73c92;
             margin: 0;
@@ -69,7 +70,6 @@
             user-select: none;
             justify-content: space-between
         }
-
         .handle {
             display: flex;
             background-color: #ea6fa6d0;
@@ -79,11 +79,9 @@
             justify-content: space-between;
             backdrop-filter: blur(10px);
         }
-
         .handle:hover {
             cursor: move;
         }
-    
         .cancelbutton {
             color: #f0b5e0b3;
             background-color: #dd5a95d0;
@@ -97,12 +95,10 @@
         .cancelbutton:hover {
             filter: drop-shadow(0 0 2px #c66a9d);
         }
-
         .cancelbutton:active {
             background-color: rgb(214, 94, 160);
             color: #db90c7;
         }
-
         .content {
           text-align: center;
           background-color: #ffedf8c7;
@@ -116,7 +112,6 @@
           z-index: 1;
           display: flex;
         }
-
         .text {
             padding: 5px;
             user-select: text;
@@ -125,8 +120,6 @@
         .appIcon {
             width: 200px;
             opacity: 85%;
-            color: white; 
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
             filter: drop-shadow(0 0 10px #87205a);
         }
         .appIcon:hover {
@@ -160,15 +153,9 @@
         <p id="timeElement" style="color: white;">Clock</p>
     </div>
     <div style="display: flex; padding-left: 10px; flex-direction: column; padding-top: 20%;">
-        <div id="welcomeopen" class="appIcon">
-            <img src="https://github.com/sodahaunted/pastelnet.os/blob/main/.vscode/images/modAppTerminal1.png?raw=true">
-        </div>
-        <div id="usermenuopen" class="appIcon">
-            <img src="https://github.com/sodahaunted/pastelnet.os/blob/main/.vscode/images/modAppTerminal2.png?raw=true">
-        </div>
-        <div id="messagesopen" class="appIcon">
-            <img src="https://github.com/sodahaunted/pastelnet.os/blob/main/.vscode/images/modAppTerminal3.png?raw=true">
-        </div>
+        <img id="welcomeopen" class="appIcon" src="https://github.com/sodahaunted/pastelnet.os/blob/main/.vscode/images/modAppTerminal1.png?raw=true">
+        <img id="usermenuopen" class="appIcon" src="https://github.com/sodahaunted/pastelnet.os/blob/main/.vscode/images/modAppTerminal2.png?raw=true">
+        <img id="messagesopen" class="appIcon" src="https://github.com/sodahaunted/pastelnet.os/blob/main/.vscode/images/modAppTerminal3.png?raw=true">
     </div>
 
     <div class="content selected" id="welcome" style="display: none;">
@@ -238,7 +225,6 @@
             <br>
         </div>
     </div>
-
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var welcomeScreen = document.querySelector("#welcome");
@@ -255,9 +241,7 @@
             welcomeScreenOpen.addEventListener("click", function() {
                 openWindow(welcomeScreen);
             });
-        });
-
-        document.addEventListener("DOMContentLoaded", function() {
+            
             var userMenu = document.querySelector("#userMenu")
             var userMenuScreenClose = document.querySelector("#usermenuclose")
             var userMenuScreenOpen = document.querySelector("#usermenuopen")
@@ -272,9 +256,7 @@
             userMenuScreenOpen.addEventListener("click", function() {
                 openWindow(userMenu);
             });
-        });
 
-        document.addEventListener("DOMContentLoaded", function() {
             var messages = document.querySelector("#messages")
             var messagesScreenClose = document.querySelector("#messagesclose")
             var messagesScreenOpen = document.querySelector("#messagesopen")
@@ -288,9 +270,6 @@
                 messagesScreenOpen.addEventListener("click", function() {
                     openWindow(messages);
                 });
-        });
-
-        document.addEventListener("DOMContentLoaded", function() {
 
             const textElement = document.getElementById('userMenuText');
             const buttonElement = document.getElementById('userMenuButton');
@@ -300,9 +279,7 @@
                 const userValue = userMenuInput.value;
                 textElement.textContent = 'Welcome, ' + userValue + '. Thank you for joining us.';
             });
-        });
 
-        document.addEventListener("DOMContentLoaded", function() {
             let topZ = 1;
             document.querySelectorAll(".content").forEach(function(win) {
                 win.addEventListener("mousedown", function() {
@@ -311,8 +288,6 @@
                 });
             });
         });
-
     </script>
-
   </body>
 </html>
