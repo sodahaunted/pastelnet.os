@@ -19,7 +19,6 @@
             background-size: cover;
             text-align: center;
             font-family: Arial, Helvetica, sans-serif;
-            margin: 0;
         }
         p {
             color: rgba(150, 50, 100, 0.827);
@@ -46,14 +45,14 @@
             cursor:pointer;
             color: #e176cd;
         }
-        button {
+        button.user {
            border: 2px solid #8a2f50;
-           background-color: #f7acd7;
+           background-color: #efadde;
            padding: 3px 6px 3px 6px;
-           border-radius: 5px;
         }
-        button:hover {
-            filter: drop-shadow(0 0 8px #dd74ae);
+        button.user:hover {
+            filter: drop-shadow(0 0 1px #dd74ae);
+            background-color: #f69bcf;
         }
         button:active {
             background-color: #e389bc;
@@ -101,7 +100,7 @@
         }
         .content {
           text-align: center;
-          background-color: #ffedf8c7;
+          background-color: #ffedf8;
           border: 4px solid #b73c92;
           backdrop-filter: blur(10px);
           filter: drop-shadow(0 0 10px #8a2f50);
@@ -111,9 +110,11 @@
           position: absolute;
           z-index: 1;
           display: flex;
+          flex-direction: column;
+          border-radius: 5px;
         }
         .text {
-            padding: 5px;
+            padding: 10px;
             user-select: text;
             font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
         }
@@ -128,9 +129,14 @@
             filter: drop-shadow(0 0 12px #a55795);
             cursor: pointer;
         }
+        .appShortcut {
+            width: 50px;
+            cursor: pointer;
+        }
         .poster {
             opacity: 65%;
             max-width: 230px;
+            border-radius: 5px;
         }
         .emailBox {
             padding: 10px;
@@ -144,18 +150,51 @@
         .selected {
             background-color:rgb(242, 217, 234);
         }
+        .calcButtons {
+            margin: 3px;
+            user-select: none;
+            width: 43px;
+            height: 29px;
+            border-radius: 3px;
+            font-size: 16px;
+            background-color: #ffbbdf;
+            border: 2px #a8398aca solid;
+            color:#7d1d63df;
+        }
+        .calcButtons:hover, .calcClear:hover {
+            filter: drop-shadow(0 0 1px #dd74b7);
+            background-color: #f69bcf;
+        }
+        .calcdisplay {
+            width: 185px;
+            height: 40px;
+            margin: 10px;
+            padding: 1px 7px 0px 7px;
+            border-radius: 3px;
+            border: 2px #a8398acc solid;
+            font-size: 25px;
+            letter-spacing: 1.25px;
+            color:#7d1d639f;
+            background-color: #fff6ff;
+        }
     </style>
 </head>
 <html>
   <body>
+
     <div id="top" class="topbar">
         <p style="color: white; margin: 0;">PastelNet OS ⏾</p>
         <p id="timeElement" style="color: white;">Clock</p>
     </div>
+
     <div style="display: flex; padding-left: 10px; flex-direction: column; padding-top: 20%;">
         <img id="welcomeopen" class="appIcon" src="https://github.com/sodahaunted/pastelnet.os/blob/main/.vscode/images/modAppTerminal1.png?raw=true">
         <img id="usermenuopen" class="appIcon" src="https://github.com/sodahaunted/pastelnet.os/blob/main/.vscode/images/modAppTerminal2.png?raw=true">
         <img id="messagesopen" class="appIcon" src="https://github.com/sodahaunted/pastelnet.os/blob/main/.vscode/images/modAppTerminal3.png?raw=true">
+    </div>
+<br>
+    <div style="display: flex; padding-left: 10px; position: fixed; top: 100px; right: 10px;">
+        <img id="calcopen" class="appShortcut" src="https://i.pinimg.com/736x/ec/58/8e/ec588e55c50d208e1cc30a8012cbcdbe.jpg">
     </div>
 
     <div class="content selected" id="welcome" style="display: none;">
@@ -194,7 +233,7 @@
             </p>
             <input id="userMenuInput" type="text" placeholder="my name is..." style="border-radius: 5px; padding: 2px;">
             <br><br>
-            <button id="userMenuButton" class="trigger" style="border-radius: 2px;">SUBMIT</button>
+            <button id="userMenuButton" class="user" style="border-radius: 2px;">SUBMIT</button>
             <br>
         </div>
     </div>
@@ -225,6 +264,34 @@
             <br>
         </div>
     </div>
+
+    <div id="calculator" class="content selected" style="width: 225px; height: 285px; display: none;">
+        <div class="handle" id="calcheader">
+            <p class="target" style="padding: 4px; font-weight: bold;">CALCULATOR</p>
+            <button id="calcclose" class="cancelbutton"> ✕ </button>
+        </div>
+        <input id="display" class="calcdisplay" readonly>
+        <div>
+            <button onclick="clearDisplay()" class="calcButtons" style="width: 97px;">Clear</button>
+            <button onclick="appendDisplay('+')" class="calcButtons">+</button>
+            <button onclick="appendDisplay('-')" class="calcButtons">-</button>
+            <button onclick="appendDisplay('7')" class="calcButtons">7</button>
+            <button onclick="appendDisplay('8')" class="calcButtons">8</button>
+            <button onclick="appendDisplay('9')" class="calcButtons">9</button>
+            <button onclick="appendDisplay('*')" class="calcButtons">*</button>
+            <button onclick="appendDisplay('4')" class="calcButtons">4</button>
+            <button onclick="appendDisplay('5')" class="calcButtons">5</button>
+            <button onclick="appendDisplay('6')" class="calcButtons">6</button>
+            <button onclick="appendDisplay('/')" class="calcButtons">/</button>
+            <button onclick="appendDisplay('1')" class="calcButtons">1</button>
+            <button onclick="appendDisplay('2')" class="calcButtons">2</button>
+            <button onclick="appendDisplay('3')" class="calcButtons">3</button>
+            <button onclick="appendDisplay('.')" class="calcButtons">.</button>
+            <button onclick="appendDisplay('0')" class="calcButtons">0</button>
+            <button onclick="calculate()" class="calcButtons" style="width: 150px; background-color: #ec66ab8b;">=</button>
+        </div>
+    </div>
+
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var welcomeScreen = document.querySelector("#welcome");
@@ -236,8 +303,7 @@
 
             welcomeScreenClose.addEventListener("click", function() {
                 closeWindow(welcomeScreen);
-            });
-
+            })
             welcomeScreenOpen.addEventListener("click", function() {
                 openWindow(welcomeScreen);
             });
@@ -252,7 +318,6 @@
             userMenuScreenClose.addEventListener("click", function() {
                 closeWindow(userMenu);
             });
-
             userMenuScreenOpen.addEventListener("click", function() {
                 openWindow(userMenu);
             });
@@ -264,12 +329,26 @@
             function openWindow(el) { el.style.display = "block"; }
             function closeWindow(el) { el.style.display = "none"; }
 
-                messagesScreenClose.addEventListener("click", function() {
-                    closeWindow(messages);
-                });
-                messagesScreenOpen.addEventListener("click", function() {
-                    openWindow(messages);
-                });
+            messagesScreenClose.addEventListener("click", function() {
+                closeWindow(messages);
+            });
+            messagesScreenOpen.addEventListener("click", function() {
+                openWindow(messages);
+            });
+
+            var calculator = document.querySelector("#calculator")
+            var calcScreenClose = document.querySelector("#calcclose")
+            var calcScreenOpen = document.querySelector("#calcopen")
+
+            function openWindow(el) { el.style.display = "block"; }
+            function closeWindow(el) { el.style.display = "none"; }
+
+            calcScreenClose.addEventListener("click", function() {
+                closeWindow(calculator);
+            });
+            calcScreenOpen.addEventListener("click", function() {
+                openWindow(calculator);
+            });
 
             const textElement = document.getElementById('userMenuText');
             const buttonElement = document.getElementById('userMenuButton');

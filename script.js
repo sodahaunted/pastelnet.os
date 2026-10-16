@@ -47,3 +47,23 @@ function dragElement(elmnt) {
 
 dragElement(document.querySelector("#userMenu"));
 dragElement(document.querySelector("#messages"));
+dragElement(document.querySelector("#calculator"));
+
+const display = document.getElementById("display");
+
+function appendDisplay(input) {
+  display.value += input;
+}
+
+function clearDisplay(input) {
+  display.value = "";
+}
+
+function calculate() {
+  try {
+    display.value = eval(display.value)
+  }
+  catch(error) {
+    display.value = ""
+  } 
+}
