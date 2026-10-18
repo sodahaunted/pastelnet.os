@@ -60,6 +60,11 @@ function clearDisplay(input) {
   display.value = "";
 }
 
+  function playMusic() {
+    var audio = new Audio('FrankJavCee - Ｓｉｍｐｓｏｎｗａｖｅ １９９５ (Original Music Video).mp3');
+    audio.play();
+  }
+
 function calculate() {
   try {
     display.value = eval(display.value)

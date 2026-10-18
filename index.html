@@ -140,7 +140,7 @@
             border: 2px solid #a5dfb2;
         }
         .appShortcut:hover {
-            width: 34px;
+            width: 31px;
         }
         .poster {
             opacity: 65%;
@@ -185,6 +185,28 @@
             letter-spacing: 1.25px;
             color:#7d1d639f;
             background-color: #fff6ff;
+        }
+        .tooltip {
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted black;
+        cursor: pointer;
+        }
+
+        .tooltiptext {
+        visibility: hidden;
+        width: 130px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        }
+
+        .tooltip:hover .tooltiptext {
+        visibility: visible;
         }
     </style>
 </head>
@@ -283,10 +305,12 @@
         </div>
         <div class="text">
             <br>
-            <audio controls>
-                <source src="FrankJavCee - Ｓｉｍｐｓｏｎｗａｖｅ １９９５ (Original Music Video).mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
+            <div class="tooltip">
+                <img onclick="playMusic()" class="poster" src="https://i.scdn.co/image/ab67616d00001e027de9e4c19a7bf6d46562bbb1" style="width: 150px;">
+                <span class="tooltiptext">click to play</span>
+            </div>
+            <p>s i m p s o n w a v e - 1 9 9 5 </p>
+            <p>FrankJavCee</p>
             <br>
         </div>
     </div>
