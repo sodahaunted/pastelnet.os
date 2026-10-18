@@ -48,6 +48,7 @@ function dragElement(elmnt) {
 dragElement(document.querySelector("#userMenu"));
 dragElement(document.querySelector("#messages"));
 dragElement(document.querySelector("#calculator"));
+dragElement(document.querySelector("#music"));
 
 const display = document.getElementById("display");
 

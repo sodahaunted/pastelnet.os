@@ -104,13 +104,13 @@
           border: 4px solid #b73c92;
           backdrop-filter: blur(10px);
           filter: drop-shadow(0 0 10px #8a2f50);
-          width: 500px;
+          width: 450px;
+          position: fixed;
+          left: 30%;
+          top: 30%;
           user-select: none;
           opacity: 99%;
-          position: absolute;
           z-index: 1;
-          display: flex;
-          flex-direction: column;
           border-radius: 5px;
         }
         .text {
@@ -130,8 +130,17 @@
             cursor: pointer;
         }
         .appShortcut {
-            width: 50px;
+            width: 30px;
+            filter: invert(100%);
             cursor: pointer;
+            background-color:rgb(134, 210, 164);
+            border-radius: 2px;
+            padding: 3px;
+            margin: 4px;
+            border: 2px solid #a5dfb2;
+        }
+        .appShortcut:hover {
+            width: 34px;
         }
         .poster {
             opacity: 65%;
@@ -187,19 +196,21 @@
         <p id="timeElement" style="color: white;">Clock</p>
     </div>
 
-    <div style="display: flex; padding-left: 10px; flex-direction: column; padding-top: 20%;">
-        <img id="welcomeopen" class="appIcon" src="https://github.com/sodahaunted/pastelnet.os/blob/main/.vscode/images/modAppTerminal1.png?raw=true">
-        <img id="usermenuopen" class="appIcon" src="https://github.com/sodahaunted/pastelnet.os/blob/main/.vscode/images/modAppTerminal2.png?raw=true">
-        <img id="messagesopen" class="appIcon" src="https://github.com/sodahaunted/pastelnet.os/blob/main/.vscode/images/modAppTerminal3.png?raw=true">
+    <div style="display: flex;"> <!-- separates the two groups of applications together -->
+        <div style="display: flex; flex-direction: column; padding: 20% 0 0 10px;">
+            <img id="welcomeopen" class="appIcon" src="https://github.com/sodahaunted/pastelnet.os/blob/main/.vscode/images/modAppTerminal1.png?raw=true">
+            <img id="usermenuopen" class="appIcon" src="https://github.com/sodahaunted/pastelnet.os/blob/main/.vscode/images/modAppTerminal2.png?raw=true">
+            <img id="messagesopen" class="appIcon" src="https://github.com/sodahaunted/pastelnet.os/blob/main/.vscode/images/modAppTerminal3.png?raw=true">
+            <br><br><br><br>
+            <img id="musicopen" class="appShortcut" src="https://img.icons8.com/?size=60&id=59845&format=png">
+            <img id="calcopen" class="appShortcut" src="https://img.icons8.com/?size=48&id=xyiWVhcb7SQY&format=png">
+            <img id="notesopen" class="appShortcut" src="https://img.icons8.com/?size=96&id=NNQjho21rpcU&format=png">
+            <img id="moonopen" class="appShortcut" src="https://img.icons8.com/?size=60&id=101343&format=png"><br>
+        </div>
     </div>
-<br>
-    <div style="display: flex; padding-left: 10px; position: fixed; top: 100px; right: 10px;">
-        <img id="calcopen" class="appShortcut" src="https://i.pinimg.com/736x/ec/58/8e/ec588e55c50d208e1cc30a8012cbcdbe.jpg">
-    </div>
-
-    <div class="content selected" id="welcome" style="display: none;">
+    <div class="content selected" id="welcome" style="display: none; width: 500px;">
         <div class="handle" id="welcomeheader">
-            <p style="padding: 4px; font-weight: bold;;">WELCOME_MENU</p>
+            <p style="padding: 4px; font-weight: bold;">WELCOME_MENU</p>
             <button id="welcomeclose" class="cancelbutton"> ✕ </button>
         </div>
         <div class="text">
@@ -238,7 +249,7 @@
         </div>
     </div>
 
-    <div id="messages" class="content selected" style="display: none;">
+    <div id="messages" class="content selected" style="display: none; width: 520px;">
         <div class="handle" id="messagesheader">
             <p class="target" style="padding: 4px; font-weight: bold;">MESSAGES [1]</p>
             <button id="messagesclose" class="cancelbutton"> ✕ </button>
@@ -261,6 +272,21 @@
                     CLICK HERE!!! -> <a class="link" href="scam.html"><u>www.freemony.lol</u></a>
                     </p>
                 </div>
+            <br>
+        </div>
+    </div>
+
+    <div class="content selected" id="music" style="display: none; width: 500px;">
+        <div class="handle" id="musicheader">
+            <p style="padding: 4px; font-weight: bold;">MUSIC_PLAYER</p>
+            <button id="musicclose" class="cancelbutton"> ✕ </button>
+        </div>
+        <div class="text">
+            <br>
+            <audio controls>
+                <source src="FrankJavCee - Ｓｉｍｐｓｏｎｗａｖｅ １９９５ (Original Music Video).mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
             <br>
         </div>
     </div>
@@ -294,65 +320,59 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            var welcomeScreen = document.querySelector("#welcome");
-            var welcomeScreenClose = document.querySelector("#welcomeclose");
-            var welcomeScreenOpen = document.querySelector("#welcomeopen");
-
             function openWindow(el) { el.style.display = "block"; }
             function closeWindow(el) { el.style.display = "none"; }
 
-            welcomeScreenClose.addEventListener("click", function() {
-                closeWindow(welcomeScreen);
+            var welcomeMenu = document.querySelector("#welcome");
+
+            document.querySelector("#welcomeclose").addEventListener("click", function() {
+                closeWindow(welcomeMenu);
             })
-            welcomeScreenOpen.addEventListener("click", function() {
-                openWindow(welcomeScreen);
+            document.querySelector("#welcomeopen").addEventListener("click", function() {
+                openWindow(welcomeMenu);
             });
             
             var userMenu = document.querySelector("#userMenu")
-            var userMenuScreenClose = document.querySelector("#usermenuclose")
-            var userMenuScreenOpen = document.querySelector("#usermenuopen")
-            
-            function openWindow(el) { el.style.display = "block"; }
-            function closeWindow(el) { el.style.display = "none"; }
 
-            userMenuScreenClose.addEventListener("click", function() {
+            document.querySelector("#usermenuclose").addEventListener("click", function() {
                 closeWindow(userMenu);
             });
-            userMenuScreenOpen.addEventListener("click", function() {
+            document.querySelector("#usermenuopen").addEventListener("click", function() {
                 openWindow(userMenu);
             });
 
             var messages = document.querySelector("#messages")
-            var messagesScreenClose = document.querySelector("#messagesclose")
-            var messagesScreenOpen = document.querySelector("#messagesopen")
 
-            function openWindow(el) { el.style.display = "block"; }
-            function closeWindow(el) { el.style.display = "none"; }
-
-            messagesScreenClose.addEventListener("click", function() {
+            document.querySelector("#messagesclose").addEventListener("click", function() {
                 closeWindow(messages);
             });
-            messagesScreenOpen.addEventListener("click", function() {
+            document.querySelector("#messagesopen").addEventListener("click", function() {
                 openWindow(messages);
             });
 
+            var music = document.querySelector("#music")
+            var musicopen = document.querySelector("#musicopen")
+
+            musicopen.addEventListener("click", function() {
+                openWindow(music);
+            });
+            document.querySelector("#musicclose").addEventListener("click", function() {
+                closeWindow(music);
+            });
+
             var calculator = document.querySelector("#calculator")
-            var calcScreenClose = document.querySelector("#calcclose")
-            var calcScreenOpen = document.querySelector("#calcopen")
 
-            function openWindow(el) { el.style.display = "block"; }
-            function closeWindow(el) { el.style.display = "none"; }
-
-            calcScreenClose.addEventListener("click", function() {
+            document.querySelector("#calcclose").addEventListener("click", function() {
                 closeWindow(calculator);
             });
-            calcScreenOpen.addEventListener("click", function() {
+            document.querySelector("#calcopen").addEventListener("click", function() {
                 openWindow(calculator);
             });
 
             const textElement = document.getElementById('userMenuText');
             const buttonElement = document.getElementById('userMenuButton');
             const userName = document.getElementById("userMenuInput")
+
             userMenuInput.type = "text";
             buttonElement.addEventListener('click', () => {
                 const userValue = userMenuInput.value;
