@@ -196,17 +196,35 @@
         .tooltiptext {
         visibility: hidden;
         width: 130px;
-        background-color: black;
+        background-color: rgb(233, 154, 216);
         color: #fff;
         text-align: center;
         border-radius: 6px;
         padding: 5px 0;
+        margin: 3px;
         position: absolute;
         z-index: 1;
         }
 
         .tooltip:hover .tooltiptext {
         visibility: visible;
+        }
+
+        .journal {
+            border: 2px solid #c0349f;
+            width: 400px;
+            height: 300px;
+            border-radius: 5px;
+            background-color: #fff9fe;
+        }
+        .journaltime {
+            border: 2px solid #c12e9e;
+            width: 405px;
+            border-radius: 5px;
+            background-color: #fff9fe;
+        }
+        .journal:active, .journaltime:active {
+            border: #eb59c9;
         }
     </style>
 </head>
@@ -246,7 +264,7 @@
                 <p>Please make sure to complete your login in the user menu.
                     More updates are planned in the future, including a notes app, calculator app, settings, and an enhanced email system.</p>
             <br>
-                <p>PastelNetOS is currently in <b>Alpha 1.0.5.</b></p>
+                <p>PastelNetOS is currently in <b>Beta 1.0.2.</b></p>
             <br>
             <br>
         </div>
@@ -298,7 +316,7 @@
         </div>
     </div>
 
-    <div class="content selected" id="music" style="display: none; width: 500px;">
+    <div class="content selected" id="music" style="display: none; width: 350px;">
         <div class="handle" id="musicheader">
             <p style="padding: 4px; font-weight: bold;">MUSIC_PLAYER</p>
             <button id="musicclose" class="cancelbutton"> ✕ </button>
@@ -315,7 +333,7 @@
         </div>
     </div>
 
-    <div id="calculator" class="content selected" style="width: 225px; height: 285px; display: none;">
+    <div id="calculator" class="content selected" style="width: 225px; height: 285px; display: none; background-color: #ffdaec;">
         <div class="handle" id="calcheader">
             <p class="target" style="padding: 4px; font-weight: bold;">CALCULATOR</p>
             <button id="calcclose" class="cancelbutton"> ✕ </button>
@@ -342,75 +360,30 @@
         </div>
     </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            function openWindow(el) { el.style.display = "block"; }
-            function closeWindow(el) { el.style.display = "none"; }
+    <div class="content selected" id="notes" style="display: none; width: 430px;">
+        <div class="handle" id="notesheader">
+            <p style="padding: 4px; font-weight: bold;">NOTES</p>
+            <button id="notesclose" class="cancelbutton"> ✕ </button>
+        </div>
+        <div class="text">
+            <input type="time" class="journaltime" style="margin-bottom: 7px;">
+            <input type="text" class="journal">
+        </div>
+    </div>
 
-            var welcomeMenu = document.querySelector("#welcome");
+    <div class="content selected" id="moon" style="display: none; width: 350px;">
+        <div class="handle" id="moonheader">
+            <p style="padding: 4px; font-weight: bold;">GALLERY</p>
+            <button id="moonclose" class="cancelbutton"> ✕ </button>
+        </div>
+        <div class="text" style="max-height: 500px; overflow-y: scroll;">
+            <img class="poster" style="opacity: 82%;" src="https://i.pinimg.com/1200x/da/5a/58/da5a5878039b70e846e2f4657d2637db.jpg">
+            <img class="poster" style="opacity: 82%;" src="https://i.pinimg.com/1200x/14/c3/24/14c324fad61d427603d4c10ed157fc8a.jpg">
+            <img class="poster" style="opacity: 82%;" src="https://i.pinimg.com/1200x/51/b4/f8/51b4f83b78848998f5441e401879af3f.jpg">
+            <img class="poster" style="opacity: 82%;" src="https://i.pinimg.com/736x/60/9d/6c/609d6c676eabad819bcf905114a44d15.jpg">
+            <img class="poster" style="opacity: 82%;" src="https://i.pinimg.com/736x/c6/3d/1c/c63d1ccd0cc1dfbb53f34b21f6db3191.jpg">
+        </div>
+    </div>
 
-            document.querySelector("#welcomeclose").addEventListener("click", function() {
-                closeWindow(welcomeMenu);
-            })
-            document.querySelector("#welcomeopen").addEventListener("click", function() {
-                openWindow(welcomeMenu);
-            });
-            
-            var userMenu = document.querySelector("#userMenu")
-
-            document.querySelector("#usermenuclose").addEventListener("click", function() {
-                closeWindow(userMenu);
-            });
-            document.querySelector("#usermenuopen").addEventListener("click", function() {
-                openWindow(userMenu);
-            });
-
-            var messages = document.querySelector("#messages")
-
-            document.querySelector("#messagesclose").addEventListener("click", function() {
-                closeWindow(messages);
-            });
-            document.querySelector("#messagesopen").addEventListener("click", function() {
-                openWindow(messages);
-            });
-
-            var music = document.querySelector("#music")
-            var musicopen = document.querySelector("#musicopen")
-
-            musicopen.addEventListener("click", function() {
-                openWindow(music);
-            });
-            document.querySelector("#musicclose").addEventListener("click", function() {
-                closeWindow(music);
-            });
-
-            var calculator = document.querySelector("#calculator")
-
-            document.querySelector("#calcclose").addEventListener("click", function() {
-                closeWindow(calculator);
-            });
-            document.querySelector("#calcopen").addEventListener("click", function() {
-                openWindow(calculator);
-            });
-
-            const textElement = document.getElementById('userMenuText');
-            const buttonElement = document.getElementById('userMenuButton');
-            const userName = document.getElementById("userMenuInput")
-
-            userMenuInput.type = "text";
-            buttonElement.addEventListener('click', () => {
-                const userValue = userMenuInput.value;
-                textElement.textContent = 'Welcome, ' + userValue + '. Thank you for joining us.';
-            });
-
-            let topZ = 1;
-            document.querySelectorAll(".content").forEach(function(win) {
-                win.addEventListener("mousedown", function() {
-                    topZ++;
-                    win.style.zIndex = topZ;
-                });
-            });
-        });
-    </script>
   </body>
 </html>
