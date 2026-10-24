@@ -1,18 +1,23 @@
 <h1>PastelNetOS</h1>
 
-A browser-based OS built with HTML, CSS and JavaScript. Inspired by vaporwave and cyberpunk aesthetics.
+_ _ _
 
-<a href="https://sodahaunted.github.io/pastelnet.os/">[View the site here!]</a>
+<img src="https://i.pinimg.com/1200x/a6/11/e9/a611e92a622b6ceb9f2bb53debea68e1.jpg" style="width: 300px;">
 
-Features: 
-- Interactive (draggable/clickable) windows
-- Liquid glass inspired UI
-- Concept email app w/ fake scam link
-- Real-time updating clock
+A browser-based OS built with HTML, CSS and JavaScript– loosely inspired by Cyberpunk Edgerunners and 90's vaporwave. This is my first completed web dev project using JS. Currently features 7 applications with a draggable window interface. Relax and rewind with this light operating system that runs directly on the web, no download needed.
+
+<a href="https://sodahaunted.github.io/pastelnet.os/">[View the site here]</a>
+
+Applications: 
+- Welcome Menu: short introductory message
+- User Menu: personal user name input for the OS
+- Messages: interactive fake scam email
+- Music Player: play a chill song
+- Calculator: solve basic math problems (addition, subtraction, multiplicatiom, division)
+- Notes: set the date/time and store miscellaneous notes
+- Gallery: browse through a small collection of photos
 <br>
 
-This website was inspired by Cyberpunk 2077, a game by CD Projekt Red.
+Wallpaper is from hdqwalls.com.
 
-Wallpaper is from hdqwalls.com. All other photos are from Pinterest.
-
-This project was made for <a href="https://stardance.hackclub.com/">Hack Club Stardance</a> and is hosted on GitHub Pages.
+This project was made for the <a href="https://stardance.hackclub.com/">Hack Club Stardance</a> Web OS mission and is hosted on GitHub Pages.
