@@ -1,0 +1,219 @@
+        h1 {
+            font-size: 28px;
+            color:#a43c85;
+        }
+        body {
+            background-color: #2A0621;
+            background-image: url(https://images.hdqwalls.com/wallpapers/city-lights-sunrise-vaporwave-s5.jpg);
+            background-position: fill;
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+        }
+        p {
+            color: rgba(150, 50, 100, 0.827);
+        }
+        br {
+            user-select: none;
+        }
+        img {
+            user-select: none;
+        }
+        .icon {
+            width: 20px;
+        }
+        p {
+            margin: 0;
+            font-size: 14px;
+        }
+        .link {
+            color:#b73c92;
+            margin: 0;
+        }
+        .link:hover {
+            filter: drop-shadow(0 0 2px #f6f0f2);
+            cursor:pointer;
+            color: #e176cd;
+        }
+        button.user {
+           border: 2px solid #8a2f50;
+           background-color: #efadde;
+           padding: 3px 6px 3px 6px;
+        }
+        button.user:hover {
+            filter: drop-shadow(0 0 1px #dd74ae);
+            background-color: #f69bcf;
+        }
+        button:active {
+            background-color: #e389bc;
+        }
+        .topbar {
+            display: flex;
+            backdrop-filter: blur(15px);
+            padding: 10px;
+            background-color: rgba(248, 212, 191, 0.229);
+            font-weight: bold;
+            font-size: 15px;
+            margin: 0px;
+            margin-bottom: 5px;
+            user-select: none;
+            justify-content: space-between
+        }
+        .handle {
+            display: flex;
+            background-color: #ea6fa6d0;
+            padding: 5px;
+            color: #c755bc;
+            border-bottom: 4px solid #b73c92;
+            justify-content: space-between;
+            backdrop-filter: blur(10px);
+        }
+        .handle:hover {
+            cursor: move;
+        }
+        .cancelbutton {
+            color: #f0b5e0b3;
+            background-color: #dd5a95d0;
+            border-radius: 1px;
+            border: 0;
+            padding: 5px 9px 5px 9px;
+            font-size: 13px;
+            margin: 0;
+            cursor: pointer;
+        }
+        .cancelbutton:hover {
+            filter: drop-shadow(0 0 2px #c66a9d);
+        }
+        .cancelbutton:active {
+            background-color: rgb(214, 94, 160);
+            color: #db90c7;
+        }
+        .content {
+          text-align: center;
+          background-color: #ffedf8;
+          border: 4px solid #b73c92;
+          backdrop-filter: blur(10px);
+          filter: drop-shadow(0 0 10px #8a2f50);
+          width: 450px;
+          position: fixed;
+          left: 30%;
+          top: 30%;
+          user-select: none;
+          opacity: 99%;
+          z-index: 1;
+          border-radius: 5px;
+        }
+        .text {
+            padding: 10px;
+            user-select: text;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+        }
+        .appIcon {
+            width: 200px;
+            opacity: 85%;
+            filter: drop-shadow(0 0 10px #87205a);
+        }
+        .appIcon:hover {
+            width: 205px;
+            opacity: 95%;
+            filter: drop-shadow(0 0 12px #a55795);
+            cursor: pointer;
+        }
+        .appShortcut {
+            width: 30px;
+            cursor: pointer;
+            background-color:rgb(205, 73, 178);
+            border-radius: 2px;
+            padding: 3px;
+            margin: 4px;
+            border: 2px solid #7c2257;
+        }
+        .appShortcut:hover {
+            filter: drop-shadow(0 0 12px #722964);
+        }
+        .poster {
+            opacity: 65%;
+            max-width: 230px;
+            border-radius: 5px;
+        }
+        .emailBox {
+            padding: 10px;
+            margin: 8px;
+            border-radius: 3px;
+            border: 2px solid #b73c92;
+            background-color: #fff6ff;
+            text-align: left;
+            opacity: 60%;
+        }
+        .selected {
+            background-color:rgb(242, 217, 234);
+        }
+        .calcButtons {
+            margin: 3px;
+            user-select: none;
+            width: 43px;
+            height: 29px;
+            border-radius: 3px;
+            font-size: 16px;
+            background-color: #ffbbdf;
+            border: 2px #a8398aca solid;
+            color:#7d1d63df;
+        }
+        .calcButtons:hover, .calcClear:hover {
+            filter: drop-shadow(0 0 1px #dd74b7);
+            background-color: #f69bcf;
+        }
+        .calcdisplay {
+            width: 185px;
+            height: 40px;
+            margin: 10px;
+            padding: 1px 7px 0px 7px;
+            border-radius: 3px;
+            border: 2px #a8398acc solid;
+            font-size: 25px;
+            letter-spacing: 1.25px;
+            color:#7d1d639f;
+            background-color: #fff6ff;
+        }
+        .tooltip {
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted black;
+        cursor: pointer;
+        }
+
+        .tooltiptext {
+        visibility: hidden;
+        width: 130px;
+        background-color: rgb(233, 154, 216);
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        margin: 3px;
+        position: absolute;
+        z-index: 1;
+        }
+
+        .tooltip:hover .tooltiptext {
+        visibility: visible;
+        }
+
+        .journal {
+            border: 2px solid #c0349f;
+            width: 400px;
+            height: 300px;
+            border-radius: 5px;
+            background-color: #fff9fe;
+        }
+        .journaltime {
+            border: 2px solid #c12e9e;
+            width: 405px;
+            border-radius: 5px;
+            background-color: #fff9fe;
+        }
+        .journal:active, .journaltime:active {
+            border: #eb59c9;
+        }
