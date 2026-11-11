@@ -183,6 +183,14 @@
         cursor: pointer;
         }
 
+        .input {
+            border: 2px #a8398acc solid;
+        }
+
+        p:active {
+            border: none;
+        }
+
         .tooltiptext {
         visibility: hidden;
         width: 130px;

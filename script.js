@@ -11,92 +11,45 @@ setInterval(updateTime, 1000);
 
 document.addEventListener("DOMContentLoaded", function() {
   function openWindow(el) { el.style.display = "block"; }
-  function closeWindow(el) { el.style.display = "none"; }
+  function closeWindow(el) {
+  console.trace("closing", el.id);
+  el.style.display = "none";
+}
 
-  var welcomeMenu = document.querySelector("#welcome");
+  const applications = ["welcome", "userMenu", "messages", "music", "calc", "notes", "moon"];
 
-  document.querySelector("#welcomeclose").addEventListener("click", function() {
-                closeWindow(welcomeMenu);
-  })
-  document.querySelector("#welcomeopen").addEventListener("click", function() {
-  openWindow(welcomeMenu);
-  });
-            
-  var userMenu = document.querySelector("#userMenu")
+  applications.forEach(function(application) {
+    const win = document.querySelector("#" + (application));
 
-  document.querySelector("#usermenuclose").addEventListener("click", function() {
-  closeWindow(userMenu);
-  });
-  document.querySelector("#usermenuopen").addEventListener("click", function() {
-  openWindow(userMenu);
+    document.querySelector("#" + application + "open").addEventListener("click", function() {
+      openWindow(win);
+    });
+    document.querySelector("#" + application + "close").addEventListener("click", function() {
+      closeWindow(win);
+    });
   });
 
-  var messages = document.querySelector("#messages")
 
-  document.querySelector("#messagesclose").addEventListener("click", function() {
-  closeWindow(messages);
+// userMenu application scripts
+  const textElement = document.getElementById('userMenuText');
+  const buttonElement = document.getElementById('userMenuButton');
+  const userName = document.getElementById("userMenuInput")
+
+  userMenuInput.type = "text";
+  buttonElement.addEventListener('click', () => {
+    const userValue = userMenuInput.value;
+    textElement.textContent = 'Welcome, ' + userValue + '. Thank you for joining us.';
   });
-  document.querySelector("#messagesopen").addEventListener("click", function() {
-  openWindow(messages);
+
+  let topZ = 1;
+    document.querySelectorAll(".content").forEach(function(win) {
+      win.addEventListener("mousedown", function() {
+      topZ++;
+      win.style.zIndex = topZ;
+      });
+    });
   });
 
-  var music = document.querySelector("#music")
-  var musicopen = document.querySelector("#musicopen")
-
-  musicopen.addEventListener("click", function() {
-  openWindow(music);
-  });
-  document.querySelector("#musicclose").addEventListener("click", function() {
-                closeWindow(music);
-            });
-
-            var calculator = document.querySelector("#calculator")
-
-            document.querySelector("#calcclose").addEventListener("click", function() {
-                closeWindow(calculator);
-            });
-            document.querySelector("#calcopen").addEventListener("click", function() {
-                openWindow(calculator);
-            });
-            
-            var notes = document.querySelector("#notes")
-
-            document.querySelector("#notesclose").addEventListener("click", function() {
-                closeWindow(notes);
-            });
-            document.querySelector("#notesopen").addEventListener("click", function() {
-                openWindow(notes);
-            });
-
-            var moon = document.querySelector("#moon")
-
-            document.querySelector("#moonclose").addEventListener("click", function() {
-                closeWindow(moon);
-            });
-            document.querySelector("#moonopen").addEventListener("click", function() {
-                openWindow(moon);
-            });
-
-            const textElement = document.getElementById('userMenuText');
-            const buttonElement = document.getElementById('userMenuButton');
-            const userName = document.getElementById("userMenuInput")
-
-            userMenuInput.type = "text";
-            buttonElement.addEventListener('click', () => {
-                const userValue = userMenuInput.value;
-                textElement.textContent = 'Welcome, ' + userValue + '. Thank you for joining us.';
-            });
-
-            let topZ = 1;
-            document.querySelectorAll(".content").forEach(function(win) {
-                win.addEventListener("mousedown", function() {
-                    topZ++;
-                    win.style.zIndex = topZ;
-                });
-            });
-        });
-
-dragElement(document.getElementById("welcome"));
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
   var startTop = 0, startLeft = 0;
@@ -132,33 +85,45 @@ function dragElement(elmnt) {
   }
 }
 
-dragElement(document.querySelector("#userMenu"));
-dragElement(document.querySelector("#messages"));
-dragElement(document.querySelector("#calculator"));
-dragElement(document.querySelector("#music"));
-dragElement(document.querySelector("#notes"));
-dragElement(document.querySelector("#moon"));
+const shortcuts = ["welcome", "userMenu", "messages", "calc", "music", "notes", "moon"]
+
+shortcuts.forEach(function(shortcut) {
+  dragElement(document.querySelector("#" + shortcut));
+});
 
 const display = document.getElementById("display");
 
-function appendDisplay(input) {
-  display.value += input;
-}
 
-function clearDisplay(input) {
-  display.value = "";
-}
+// calculator app scripts
+  function appendDisplay(input) {
+    display.value += input;
+  }
 
+  function clearDisplay(input) {
+    display.value = "";
+  }
+
+  function calculate() {
+    try {
+      display.value = eval(display.value)
+    }
+    catch(error) {
+      display.value = ""
+    } 
+  }
+
+// music app scripts
   function playMusic() {
     var audio = new Audio('FrankJavCee - Ｓｉｍｐｓｏｎｗａｖｅ １９９５ (Original Music Video).mp3');
     audio.play();
   }
 
-function calculate() {
-  try {
-    display.value = eval(display.value)
+//notes app scripts
+  function updateStorage() {
+    localStorage.setItem("notes", notesContainer.innerHTML)
   }
-  catch(error) {
-    display.value = ""
-  } 
-}
+
+  function showNotes() {
+    notesContainer.innerHTML = localStorage.getItem("notes")
+  }
+  showNotes()
